@@ -1,7 +1,118 @@
 /* Decent Defaults */
-
-img,
-video {
+body {
+  background-color: rgb(32, 11, 51);
+}
+article > * + * {
+  margin-top: 0;
+}
+img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-130deg)
+    saturate(600%) contrast(0.8);
+  object-fit: cover;
+}
+
+.insights {
+  background-color: hsl(244, 38%, 16%);
+}
+.article {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.16);
+  margin: 0 1rem;
+  max-width: 60rem;
+}
+.grid2 {
+  display: grid;
+  gap: 1 rem;
+}
+/*
+desktop only style
+*/
+@media (min-width: 50em) {
+  .grid {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .grid > * {
+    width: 50%;
+  }
+  .grid2 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/*
+mobile only style
+*/
+@media (max-width: 50em) {
+  article {
+    text-align: center;
+  }
+  .insights ul li {
+    margin-top: 1rem;
+  }
+}
+/* .insights {
+  grid-row-start: 1;
+  grid-row-end: 3;
+} */
+.picture article,
+.picture section,
+.picture header {
+  height: 100%;
+}
+.section.insights ul {
+  list-style-type: none;
+  padding: 0%;
+  margin: 0%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+  grid-auto-rows: minmax(4rem, auto);
+}
+body {
+  color: white;
+}
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 29px;
+}
+.insights {
+  padding: 5rem;
+}
+.insights ul span {
+  display: block;
+}
+.insights h1 span {
+  font-weight: 700;
+  color: hsl(277, 64%, 61%);
+  font-family: "Inter", sans-serif;
+}
+.insights li span:first-child {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+.insights li span:nth-child(2) {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+article {
+  margin: 0 5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
